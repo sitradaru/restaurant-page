@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Chillin on Sunday';
+    src: url('./resources/fonts/ChillinonSunday.woff2') format('woff2'),
+        url('./resources/fonts/ChillinonSunday.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --prm-font: #800000;
+    --pink-font: #f40390bb;
+}
+
+.chillin-font {
+    font-family: 'Chillin on Sunday';
+    font-weight: 500;
+}
+
+.pink {
+    color: var(--pink-font);
+}
+
+body {
+    color: var(--prm-font);
+    font-family: sans-serif;
+    background-color: #f9e0c6c3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: .5em 5em;
+    background: #fff7f0;
+}
+
+.logo {
+    display: flex;
+    gap: .6em;
+}
+
+.logo-img {
+    width: 4rem;
+    overflow: hidden;
+}
+
+.logo-img img {
+    width: 100%;
+}
+
+.logo-slogan p {
+    font-size: .6rem;
+    margin-top: .3em;
+    letter-spacing: .6px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: .5em;
+}
+
+button {
+    color: inherit;
+    background-color: inherit;
+    padding: .5em 1.5em;
+    border-radius: 40px;
+    border: 1px solid #800000;
+    font-weight: 600;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.home-page {
+    width: 100vw;
+    height: 85vh;
+    background: url("./resources/images/latte-and-donut.svg");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    padding: 8em;
+}
+
+.home-page-content {
+    max-width: 45ch;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items:flex-start;
+}
+
+.home-page-content h2 {
+    font-size: 2.5rem;
+    width: 20ch;
+}

@@ -1,5 +1,5 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import { watchFile } from "node:fs";
+// import { watchFile } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -12,12 +12,12 @@ export default {
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),
-        clear: true,
+        clean: true,
     },
 
     devtool: "eval-source-map",
     devServer : {
-        watchFile: ["./src/template.html"]
+        watchFiles: ["./src/template.html"]
     },
 
     module : {
@@ -26,10 +26,19 @@ export default {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: "asset/resource",
             },
+
+            { 
+                test: /\.html$/i,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            }
         ],
     },
 
-    plugin: [
+    plugins: [
         new HtmlWebpackPlugin({
             template: "./src/template.html"
         }),

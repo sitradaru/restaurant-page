@@ -16,8 +16,9 @@
 }
 
 :root {
-    --prm-font: #800000;
-    --pink-font: #f40390bb;
+    --primary-color: #570101;
+    --pink-color: #f40390bb;
+    --secondary-color: #fff7f0;
 }
 
 .chillin-font {
@@ -26,11 +27,11 @@
 }
 
 .pink {
-    color: var(--pink-font);
+    color: var(--pink-color);
 }
 
 body {
-    color: var(--prm-font);
+    color: var(--primary-color);
     font-family: sans-serif;
     background-color: #f9e0c6c3;
 }
@@ -64,41 +65,44 @@ header {
     letter-spacing: .6px;
 }
 
-ul {
+nav ul {
     list-style: none;
     display: flex;
     gap: .5em;
 }
 
 button {
-    color: inherit;
+    color: var(--primary-color);
     background-color: inherit;
     padding: .5em 1.5em;
     border-radius: 40px;
-    border: 1px solid #800000;
+    border: 1px solid var(--primary-color);
     font-weight: 600;
-}
-
-button:hover {
     cursor: pointer;
 }
 
-.home-page {
-    width: 100vw;
-    height: 85vh;
+.active {
+    border: 1px solid var(--pink-color);
+    background-color: var(--pink-color);
+    color: var(--secondary-color)
+}
+
+#content.home-page {
     background: url("./resources/images/latte-and-donut.svg");
     background-position: center top;
     background-size: 100% auto;
     background-repeat: no-repeat;
 
     padding: 8em;
+    width: 100vw;
+    height: 85vh;
 }
 
 .home-page-content {
     max-width: 45ch;
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: 1em;
     align-items:flex-start;
 }
 
@@ -106,3 +110,89 @@ button:hover {
     font-size: 2.5rem;
     width: 20ch;
 }
+
+.intro-btn {
+    border: 1px solid var(--pink-color);
+    color: var(--pink-color);
+    margin-right: 1em;
+}
+
+/* menu page */
+
+#content.menu-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2em;
+}
+
+.menu-page h2 {
+    font-size: 3rem;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin: 2em
+}
+
+.title {
+    display: flex;
+    align-items: flex-end;
+    gap: .3em;
+}
+
+.title-img {
+    width: 2em;
+    height: 2em;
+}
+
+.title-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.list {
+    background-color: var(--secondary-color);
+    padding: 1em;
+    border-radius: 12px;
+    list-style: none;
+    display: flex;
+    gap: .5em;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3em;
+}
+
+.item {
+    width: 7em;
+    height: 7em;
+
+    background-color: #cbbdb1;
+    border-radius: 12px;
+    transition: transform 300ms ease-in-out;
+}
+
+.item:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.08);
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.item-container p {
+    font-size: .8rem;
+}
+
+

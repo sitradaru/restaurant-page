@@ -1,7 +1,8 @@
 export function displayHomePage() {
     const content = document.querySelector("#content");
+    const homeBtn = document.querySelector("#home-btn");
 
-    const homeDiv = document.createElement("div");
+    const homeDiv = document.createElement("section");
     const homeHeader = document.createElement("h2");
     const homePara = document.createElement("p");
     const homeButtonDiv = document.createElement("div");
@@ -10,6 +11,8 @@ export function displayHomePage() {
 
     contactBtn.textContent = "Contact Us";
     viewBtn.textContent = "View Menu";
+    contactBtn.classList.add("intro-btn");
+    viewBtn.classList.add("intro-btn");
     homeButtonDiv.append(viewBtn, contactBtn);
 
     homePara.textContent = "Freshly baked, always delicious. At Dough & Drizzle, we serve handcrafted donuts and refreshing drinks to make your day a little sweeter.";
@@ -19,6 +22,8 @@ export function displayHomePage() {
     homeDiv.classList.add("home-page-content");
     homeDiv.append(homeHeader, homePara, homeButtonDiv);
 
-    content.classList.add("home-page");
+    content.setAttribute("class", "home-page");
+
     content.appendChild(homeDiv);
+    homeBtn.classList.add("active");
 }

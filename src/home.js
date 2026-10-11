@@ -12,7 +12,9 @@ export function displayHomePage() {
     contactBtn.textContent = "Contact Us";
     viewBtn.textContent = "View Menu";
     contactBtn.classList.add("intro-btn");
+    contactBtn.dataset.action = "contact"
     viewBtn.classList.add("intro-btn");
+    viewBtn.dataset.action = "menu";
     homeButtonDiv.append(viewBtn, contactBtn);
 
     homePara.textContent = "Freshly baked, always delicious. At Dough & Drizzle, we serve handcrafted donuts and refreshing drinks to make your day a little sweeter.";

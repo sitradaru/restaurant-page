@@ -27,15 +27,21 @@ function storeItem(name, price, imageSrc, isDonut) {
     itemsArray.push(item);
 }
 
-storeItem("Classic Glazed", "$2.50", glazedDonutImage, true);
-storeItem("Chocolate Dream", "$3.00", chocolateDonutImage, true);
-storeItem("Strawberry Bliss", "$3.00", strawberryDonutImage, true);
-storeItem("Cookies $ Cream", "$3.50", cookiesDonutImage, true);
+const priceFormatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
 
-storeItem("Hot Coffee", "$2.00", hotCoffeeDrinkImage, false);
-storeItem("Iced Latte", "$2.50", latteDrinkImage, false);
-storeItem("Cappuccino", "$2.50", cappuccinoDrinkImage, false);
-storeItem("Iced Matcha", "$3.00", matchaDrinkImage, false);
+})
+
+storeItem("Classic Glazed", 2.50, glazedDonutImage, true);
+storeItem("Chocolate Dream", 3.00, chocolateDonutImage, true);
+storeItem("Strawberry Bliss", 3.00, strawberryDonutImage, true);
+storeItem("Cookies $ Cream", 3.50, cookiesDonutImage, true);
+
+storeItem("Hot Coffee", 2.00, hotCoffeeDrinkImage, false);
+storeItem("Iced Latte", 2.50, latteDrinkImage, false);
+storeItem("Cappuccino", 2.5, cappuccinoDrinkImage, false);
+storeItem("Iced Matcha", 3.00, matchaDrinkImage, false);
 
 export function displayMenuPage() {
     const content = document.querySelector("#content");
@@ -71,7 +77,7 @@ export function displayMenuPage() {
         product.classList.add("item");
         product.appendChild(productImage);
         productPrice.classList.add("pink");
-        productPrice.textContent = item.price;
+        productPrice.textContent = priceFormatter.format(item.price);
         productName.textContent = item.name;
         productContainer.classList.add("item-container");
         productContainer.append(product, productName, productPrice);

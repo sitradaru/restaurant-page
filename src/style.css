@@ -82,6 +82,18 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--pink-color);
+    outline-offset: 3px;
+}
+
 .active {
     border: 1px solid var(--pink-color);
     background-color: var(--pink-color);
@@ -206,6 +218,39 @@ button {
     display: flex;
     align-items: center;
     gap: 8em;
+
+    position: relative;
+    isolation: isolate;
+}
+
+#content.contact-page::before {
+    content:"";
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    bottom: 0px;
+    right: -100px;
+
+    background-color: #f4039048;
+    border-radius: 40% 60% 35% 10%/ 65% 25% 85% 60%;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+#content.contact-page::after {
+    content:"";
+    position: absolute;
+    width: 550px;
+    height: 200px;
+    bottom: 0px;
+    right: -70px;
+
+    background-color: #f4039048;
+    border-radius: 70% 10% 55% 56%/ 84% 45% 32% 88%;
+
+    z-index: -1;
+    pointer-events: none;
 }
 
 .contact-page h2 {

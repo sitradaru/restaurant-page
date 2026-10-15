@@ -2,6 +2,8 @@
 
 A donut and coffee shop website built with HTML, CSS, and JavaScript as part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
+**[Live Demo](https://sitradaru.github.io/restaurant-page/)** · **[GitHub Repository](https://github.com/sitradaru/restaurant-page)**
+
 Dough & Drizzle features a welcoming homepage, a menu showcasing donuts and drinks, and a contact page with the shop's information and location.
 
 ## Features
@@ -33,7 +35,7 @@ Make sure you have [Node.js](https://nodejs.org/) and npm installed.
 1. Clone the repository:
 
    ```bash
-   git clone <your-repository-url>
+   git clone git@github.com:sitradaru/restaurant-page.git
    ```
 
 2. Navigate into the project directory:

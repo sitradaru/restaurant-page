@@ -14,24 +14,22 @@ displayHomePage();
 content.addEventListener("click", (event) => {
     const buttonAction = event.target.dataset.action;
 
-    if(!buttonAction) { return };
+    if(!buttonAction) { return }
+
+    content.className = "";
+    content.textContent = "";
+    homeBtn.classList.remove("active");
 
     if(buttonAction==="menu") {
-        content.className = "";
-        content.textContent = "";
         content.classList.add("menu-page");
         menuBtn.classList.add("active");
-        homeBtn.classList.remove("active");
         contactBtn.classList.remove("active");
         displayMenuPage();
     }
     else if(buttonAction==="contact") {
-        content.className = "";
-        content.textContent = "";
         content.classList.add("contact-page");
         contactBtn.classList.add("active");
         menuBtn.classList.remove("active");
-        homeBtn.classList.remove("active");
         displayContactPage();
 
     }

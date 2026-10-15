@@ -40,7 +40,7 @@ storeItem("Cookies $ Cream", 3.50, cookiesDonutImage, true);
 
 storeItem("Hot Coffee", 2.00, hotCoffeeDrinkImage, false);
 storeItem("Iced Latte", 2.50, latteDrinkImage, false);
-storeItem("Cappuccino", 2.5, cappuccinoDrinkImage, false);
+storeItem("Cappuccino", 2.50, cappuccinoDrinkImage, false);
 storeItem("Iced Matcha", 3.00, matchaDrinkImage, false);
 
 export function displayMenuPage() {
